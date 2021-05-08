@@ -1,0 +1,12 @@
+Iniciando package.json:
+    yarn init -y
+
+Instalando módulos:
+    yarn add express pg pg-hstore sequelize
+        //Dá uma interface de linha de comando para executar alguns comandos do sequelize para criar "migrations" por exemplo
+        OBS: o comando "yarn sequelize -h" exibe todos esses comandos
+    yarn add nodemon -D
+
+Após configurar banco e database em config/database.js e .sequelizerc, pode-se executar o comando:
+    npx sequelize-cli db:create 
+Para criar o banco definido na config

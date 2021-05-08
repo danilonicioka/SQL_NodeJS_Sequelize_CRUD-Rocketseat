@@ -1,0 +1,17 @@
+Pode-se definir uma migration com o comando:
+      npx sequelize-cli migration:create --name=nome-da-migration-sem-aspas
+    Após esse comando ser executado, será criada a migration nome-da-migration-sem-aspas no diretório especificado em .sequelizerc 'migrations_path' e ela pode ser definida de acordo com o que se quer fazer
+
+Após definir uma migration, pode-se executá-la com o comando:
+      npx sequelize-cli db:migrate
+    Esse comando também criará a tabela SequelizeMeta, a qual é útil para o caso de haver vários devs no projeto, pois ela armazena as migrations que já rodaram naquela base de dados e, caso haja alguma migration criada por outro dev que ainda não foi executada, o sequelize detecta e executa
+
+O comando:
+    npx sequelize-cli db:migrate:undo
+Desfaz a última migration
+
+Caso queira adicionar algum campo em uma tabela criada por uma migration, é melhor criar outra migration para adicionar esse campo
+  Ex: npx sequelize-cli migration:create --name=add-age-field-to-users
+Após configurar essa nova migration, basta executar novamente o comando:   
+  npx sequelize-cli db:migrate
+Obs: Como o npx sequelize-cli db:migrate:undo desfaz o último comando npx sequelize-cli db:migrate, nesse caso, o que será desfeito é o campo age

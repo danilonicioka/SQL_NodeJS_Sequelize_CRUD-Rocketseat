@@ -1,0 +1,13 @@
+//Importa o path do node, pois é bom para lidar com caminhos
+const path = require('path');
+
+
+module.exports = {
+    config: path.resolve(__dirname, 'src', 'config', 'database.js'), //função para definir o caminho para o arquivo em que cada vírgula é um diretório
+    'migrations-path': path.resolve(__dirname, 'src', 'database', 'migrations'), //Define onde vai armazenar as migrations que serão criadas
+    /*Após definir essa path, pode-se criar a migration com o comando:
+        npx sequelize-cli migration:create --name=create-users 
+    Uma migration com o nome "create-users"
+    As migrations são criadas com o timestamp atual para que sempre fiquem na ordem de criação
+    */
+};

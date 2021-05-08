@@ -1,0 +1,1 @@
+Para separar em pastas e não deixar tudo em rotas, cria-se a pasta para armazenar os controllers, os quais são responsáveis por lidar com as requisições e devolve respostas ao frontend ou para a aplicação 
