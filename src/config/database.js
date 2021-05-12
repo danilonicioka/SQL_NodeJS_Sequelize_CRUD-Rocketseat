@@ -3,7 +3,7 @@ module.exports = {
     dialect: 'postgres',
     host: 'localhost',
     username: 'postgres',
-    password: 'postgres0802',
+    password: '',
     database: 'sqlnode',
     define: {
         timestamps: true, //define que toda tabela criada tb terá os campos "created_at" e "updated_at"
