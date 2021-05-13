@@ -12,6 +12,14 @@ class User extends Model{
             sequelize //objeto de configuração para conexão com banco de dados que recebe como padrão o sequelize
         })
     }
+
+    /* 
+        Para fazer uma query dos endereços de um usuário, para pegar em uma rota por exemplo, deve-se fazer essa associação "correspondente" à de Adress-> an address "'belongsTo' an user" and "an user 'hasMany' addresses" 
+    */
+    static associate(models){
+        this.hasMany(models.Address, {foreignKey: 'user_id', as: 'addresses'}); //a chave estrangeira é a mesma, e essa associação é referenciada como 'addresses', pois um usuário retornará (se tiver) vários endereços
+        this.belongsToMany(models.Tech, { foreignKey: 'user_id', through: 'user_techs', as: 'techs'}); //em relações N-N smp será belongsToMany
+    }
 }
 
 module.exports = User;

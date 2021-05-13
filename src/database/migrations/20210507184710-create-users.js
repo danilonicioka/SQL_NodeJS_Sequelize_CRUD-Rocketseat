@@ -1,3 +1,4 @@
+//Migration para criar usuários
 'use strict';
 
 module.exports = {

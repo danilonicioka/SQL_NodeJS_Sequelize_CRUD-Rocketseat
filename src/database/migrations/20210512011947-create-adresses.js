@@ -1,3 +1,5 @@
+//Migration para criar endereços
+
 'use strict';
 
 module.exports = {
